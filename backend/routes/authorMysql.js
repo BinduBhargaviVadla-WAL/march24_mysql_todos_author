@@ -1,0 +1,10 @@
+var express = require("express");
+var router = express.Router();
+var authorController = require("../controllers/authorController");
+router.get("/createtable", authorController.createTable);
+router.post("/", authorController.insertAuthor);
+router.get("/", authorController.selectAuthor);
+router.delete("/:id", authorController.deleteAuthor);
+router.delete("/", authorController.deleteAll);
+router.put("/:id", authorController.updateAuthor);
+module.exports = router;

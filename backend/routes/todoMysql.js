@@ -1,0 +1,10 @@
+var express = require("express");
+var router = express.Router();
+var todosController = require("../controllers/todoController");
+router.get("/createtable", todosController.createTable);
+router.post("/", todosController.insertTodo);
+router.get("/", todosController.selectTodo);
+router.delete("/:id", todosController.deleteTodo);
+router.delete("/", todosController.deleteAll);
+router.put("/:id", todosController.updateTodo);
+module.exports = router;
